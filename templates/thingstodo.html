@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> SeaView Apartment </title>
+		<link type="text/css" rel="stylesheet" href="static/index.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	</head>
+
+	<body data-title="ThingsToDo">
+	<div id="wrap">
+		<header>
+			<div id="logo">
+				<img src="static/images/SeaView_logo.png" alt="static/images/SeaView_logo.png">
+			</div>
+			<h1 id="top"> SeaView Apartment </h1>
+		</header>
+
+		<ul id="navbar" class="navbar">
+			<li> <a href = "/"> Home </a></li>
+			<li> <a href = "/information"> Information </a></li>
+			<li class="current"> <a href = "/things_to_do"> Things to do </a></li>
+			<li> <a href = "/directions"> Directions </a></li>
+			<li> <a href = "/reviews"> Reviews </a></li>
+			<li> <a href = "/contactus"> Contact Us </a></li>
+			<li id="book"> <a href = "/booking"> BOOK HERE </a></li>
+			<li class="dropdown"> <a href="javascript:void(0);" onclick="resize()">&#9776;</a></li> 
+		</ul>
+		
+		<div id="main">
+			<div class="border">
+				<h2> Things to do </h2>
+					<p> Around our SeaView Apartment, there are a lot of things to do and see. We have created a list
+					of the top places and activities to do while you stay with us. It contains a variety of different 
+					things that will suit everyone! </p>
+			</div>
+			<a class="top" href="#top">Back to top</a>
+
+			<!-- An accordion is implemented here where information is hidden until the buttons are clicked which will open up a panel with the information -->
+			<button class="accordion">Shopping</button>
+			<div class="panel">
+				<h3>Joys</h3>
+					<p> This is Perranporth's smallest shop, but don't be fooled! This small space is overflowing with beautifully handcrafted
+					jewellery, Oracle cards, gorgeous crystals and beautiful meditation CD's. </p>
+					<img class="attImgs" src="static/images/Joys.jpg" alt="Joys">
+				<h3>Higgins Gift Shop</h3>
+					<p> Full of every trinket or gift you can think of, Higgins Gift Shop supplies everything from kids wetsuits to locally 
+					crafted jewellery.</p>
+					<img class="attImgs" src="static/images/Higgins.jpg" alt="Higgins Gift Shop">
+			</div>
+			
+			<button class="accordion">Attractions</button>
+			<div class="panel">
+				<h3>Perranporth Beach </h3>
+					<p> It's the beach everyone raves about and billed as a great place for surfing, snorkelling, 
+					sailing and generally splashing around. Because the beach is so huge, it almost feels as if you 
+					have the place to yourself and the fresh air off the ocean is exhilarating. Early morning you'll probably
+					see a few horses and their riders having a paddle in the surf and there's a welcome cafe for a coffee
+					stop halfway along. </p>
+					<img class="attImgs" src="static/images/Perranporth.jpg" alt="Perranporth Beach">
+				<h3>Perranporth Museum</h3>
+					<p> This Museum offers an insight into the social and industrial past of Perranporth and the
+					surrounding villages, with displays of mining, fishing, costumes, farming, surfing, a replica
+					of a Cornish kitchen and much more.</p>
+					<img class="attImgs" src="static/images/museum.jpg" alt="Perranporth Museum">
+			</div>
+			
+			<button class="accordion">Places to eat</button>
+			<div class="panel">
+				<h3> Chrissy's Tearoom </h3>
+					<p>High Tea is served here from 3pm daily or, if you fancy a delicious home made cake, 
+					fresh sandwich or fine cup of tea, Chrissy's could be the perfect stop off for you. 
+					All ingredients are locally sourced. </p>
+					<img class="attImgs" src="static/images/Chrissy's_tea.jpg" alt="Chrissy's Tearoom">
+				<h3> Perran Dairy Ice Cream Parlour </h3>
+					<p>Perran Dairy Ice Cream achieved five out of five bubbles and 122 views on the go-to travel website. 
+					As a new entry for 2015, the venue is located just a short walk from Perranporth Beach and serves up 
+					homemade artisan ice cream made from local clotted cream and milk. Visitors can also enjoy treats such 
+					as Belgium waffles, sundaes and crepes. </p>
+					<img class="attImgs" src="static/images/icecream.jpg" alt="Perran Dairy Ice Cream Parlour">
+				<h3> Willow Bistro</h3>
+					<p> Willow is a family run licensed Cafe/Bistro, They serve Breakfast, Lunch & Evening meals. 
+					Their current menu covers meat, fish, pasta and also light meals, also they have a good 
+					selection of vegetarian dishes available. <p>
+					<img class="attImgs" src="static/images/willow-cafe.jpg" alt="Willow Bistro">
+				<h3> The Watering Hole </h3>
+					<p> Beach bar/restaurant with a simple menu of burgers, snacks and pies, sea view 
+					terrace and TV sport. <p>
+					<img class="attImgs" src="static/images/the-watering-hole.jpg" alt="The Watering Hole">
+			</div>
+			
+			<button class="accordion">Local activities</button>
+			<div class="panel">
+				<h3> South West Coast Path - Cligga Head </h3>
+					<p> Take a short stroll through the silent remnants of what was once one of Cornwall's busiest 
+					mining areas. In summer this is a riot of colour, with blazing gorse bushes and banks of vivid 
+					heather, wildflowers dotted between them and the mineral-stained cliffs startlingly red against
+					the blue sea. In places the stony path passes close to high cliffs. </p>
+					<img class="attImgs" src="static/images/CoastPath.jpg" alt="South West Coast Path - Cligga Head">
+				<h3> Ticket to Ride Surf School </h3>
+					<p>Perranporth is a growing seaside town with a stunning beach. With onsite parking, changing
+					room facilities, a surf shop and small surf groups - you're all set for the best surf lesson 
+					experience from start to finish. You'll see your surfing improve in no time at all with us, 
+					as we always aim to tailor our surf lessons to the group's specific surfing needs.</p>
+					<img class="attImgs" src="static/images/surfing.jpg" alt="Ticket to Ride Surf School">
+			</div>
+		</div>
+	</div>
+		<footer>
+		<hr>
+			<p> This page was last edited on the 13th November 2016. </p>
+		</footer>
+	<script src="static/index.js"></script>  
+	</body>
+</html>

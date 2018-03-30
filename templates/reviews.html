@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> SeaView Apartment </title>
+		<link type="text/css" rel="stylesheet" href="static/index.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	</head>
+
+	<body data-title="Reviews">
+	<div id="wrap">
+		<header>
+			<div id="logo">
+				<img src="static/images/SeaView_logo.png" alt="static/images/SeaView_logo.png">
+			</div>
+			<h1> SeaView Apartment </h1>
+		</header>
+
+		<ul id="navbar" class="navbar">
+			<li> <a href = "/"> Home </a></li>
+			<li> <a href = "/information"> Information </a></li>
+			<li> <a href = "/things_to_do"> Things to do </a></li>
+			<li> <a href = "/directions"> Directions </a></li>
+			<li class="current"> <a href = "/reviews"> Reviews </a></li>
+			<li> <a href = "/contactus"> Contact Us </a></li>
+			<li id="book"> <a href = "/booking"> BOOK HERE </a></li>
+			<li class="dropdown"> <a href="javascript:void(0);" onclick="resize()">&#9776;</a></li> 
+		</ul>
+		
+		<div id="main">
+			<div class="border">
+				<h2>Reviews</h2>
+					<p>We strive to improve your experience at our apartment so if you have visited, please 
+					leave a comment of your stay here. Thank you very much!</p>
+				<h4>Your review:</h4>
+				
+				<!--Review input fields which displays them under the 'Previous Reviews' header-->
+				<form action="addReview" method="post">
+				<input id="namebox" type = "text" name="Name" placeholder="Name"><br>
+				<input id="inputComment" type="text" name="Review" placeholder="Your review">
+				<input class="button" type= "submit" value= "Post" onclick="submitReview()" >
+				</form>
+			</div>
+			<div class="border">
+				<h4>Previous Reviews</h4>
+				{% for line in reviewsList %}
+				<div class="review">
+					<p class="name">{{line[0]}}</p>
+					<p class="comment">{{line[1]}}</p>
+				</div>
+				{%endfor%}
+			</div>
+		</div>
+	</div>
+		<footer>
+		<hr>
+			<p> This page was last edited on the 13th December 2016. </p>
+		</footer>
+	<script src="static/index.js"></script>
+	</body>
+</html>

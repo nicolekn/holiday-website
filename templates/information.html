@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> SeaView Apartment </title>
+		<link type="text/css" rel="stylesheet" href="static/index.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	</head>
+
+	<body data-title="Information">
+	<div id="wrap">
+		<header>
+			<div id="logo">
+				<img src="static/images/SeaView_logo.png" alt="static/images/SeaView_logo.png">
+			</div>
+			<h1> SeaView Apartment </h1>
+		</header>
+
+		<ul id="navbar" class="navbar">
+			<li> <a href = "/"> Home </a></li>
+			<li class="current"> <a href = "/information"> Information </a></li>
+			<li> <a href = "/things_to_do"> Things to do </a></li>
+			<li> <a href = "/directions"> Directions </a></li>
+			<li> <a href = "/reviews"> Reviews </a></li>
+			<li> <a href = "/contactus"> Contact Us </a></li>
+			<li id="book"> <a href = "/booking"> BOOK HERE </a></li>
+			<li class="dropdown"> <a href="javascript:void(0);" onclick="resize()">&#9776;</a></li> 
+		</ul>
+
+		<div id="main">
+			<div class="border">
+			<h2>Our Apartment</h2>
+				<p>This is our apartment which is suitable for up to 6 people.</p>
+				<img id="apartment" src="static/images/Apartment.jpg" alt="The Apartment">
+			<h4>Facilities:</h4>
+			<ul>
+				<li>3 Double beds</li>
+				<li>Air Conditioning</li>
+				<li>Internet</li>
+				<li>Television</li>
+				<li>Hair dryer</li>
+				<li>Kitchen</li>
+				<li>Washing machine</li>
+				<li class="forbidden">Smoking allowed</li>
+				<li class="forbidden">Pets allowed</li>
+			</ul>
+			</div>
+			
+			<div class="border">
+				<h4>Gallery:</h4>
+					<p>Our apartment will always look like this when you first arrive as we make sure to clean and tidy up 
+					thoroughly after each stay.</p>
+				<!-- The gallery thumbnails that enlarge when you click on them -->
+				<div class="gallery">
+					<img id="bedroom" src="static/images/Apartment_bed.jpg" alt="Bedroom" width="150" height="100">
+				</div>
+				<div class="gallery">
+					<img id="bedroom2" src="static/images/Apartment_bed2.jpg" alt="Second Bedroom" width="150" height="100">
+				</div>
+				<div class="gallery">
+					<img id="dining" src="static/images/Apartment_eat.jpg" alt="Dining room" width="150" height="100">
+				</div>
+				<div class="gallery">
+					<img id="kitchen" src="static/images/Apartment_kitchen.jpg" alt="Kitchen" width="150" height="100">
+				</div>
+				<div class="gallery">
+					<img id="bathroom" src="static/images/Apartment_bathroom.jpg" alt="Bathroom" width="150" height="100">
+				</div>
+				<div class="gallery">
+					<img id="living" src="static/images/Apartment_living.jpg" alt="Living room" width="150" height="100">
+				</div>
+				<div class="gallery">
+					<img id="sea" src="static/images/Apartment_sea.jpg" alt="Sea view" width="150" height="100">
+				</div>
+				
+				<!-- Modal box for the gallery -->
+				<div id="modalBox" class="modal">
+					<span class="close" onclick="closeModal()">&times;</span>
+					<img src="#" class="modalContent" id="img01" alt="Modal content">
+					<div id="desc"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+		<footer>
+		<hr>
+			<p> This page was last edited on the 13th November 2016. </p>
+		</footer>
+	<script src="static/index.js"></script> 
+	</body>
+</html>

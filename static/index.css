@@ -1,0 +1,352 @@
+header {
+	color: white; 
+	font-family: Chalkduster, Stencil, Times, serif;
+	border: 2px solid black; 
+	height: 30%; width: 100%; 
+	background-color:#01B6AD;
+	text-indent: 10px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+body, #desc {
+	font-family: Perpetua, Times, serif;
+	font-size: 18px;
+}
+body img {
+	max-width:100%; 
+	display: block;
+}
+#logo {
+	position: absolute; 
+	top: 10px; 
+	right: 20px; 
+	max-width: 10%; 
+	float : right;
+}
+h2 {
+	text-decoration: underline;
+	font-family: Chalkduster, Stencil, Times, serif;
+}
+h3, h4 {font-family: Chalkduster, Stencil, Times, serif;}
+.forbidden{text-decoration: line-through;}
+.border {background-color: #FCF4D9;}
+
+/* ====== Wraps the text so the footer stays at the bottom of the page ====== */
+#wrap{
+	min-height: 100%;
+}
+#main {
+	overflow:auto;
+	padding-top: 20px;
+	padding-right: 10%;
+	padding-bottom: 20px;
+	padding-left:10%;
+}
+footer {
+	position:relative;
+	margin-top: -20px;
+	height: 20px;
+	width: 100%;
+	clear: both;
+	font-size: x-small; 
+	text-align: center;
+}
+
+/* ====== Horizontal navigation bar ====== */
+#navbar {
+	border: 1px solid black; 
+	background-color: #0A4958; 
+	list-style-type: none; 
+	margin-bottom: 15px;
+	padding: 0;
+	width: 100%; 
+	overflow: auto;
+}
+#navbar li {float: left;}
+#navbar li a {
+	border: 1px black;
+	border-style: solid dashed; 
+	font-family: Chalkduster, Stencil, Times, serif;
+	color: white; 
+	display: block; 
+	padding: 12px 30px; 
+	text-align: center; 
+	text-decoration: none;
+}
+#navbar li a:hover {
+	background-color: #9BD7D5;
+	text-decoration: underline;
+}
+#book {
+	background-color: #B2577A; 
+	font-weight: bold;
+}
+/* Highlights the current page that the user is on */
+.current{
+	background-color: #129793;
+	text-decoration: underline;
+}
+
+/* ====== Will produce an icon for a vertical navigation bar if the display is too small ====== */
+#navbar li.dropdown {display: none;}
+
+@media screen and (max-width:1200px) {
+  #navbar li:not(:first-child) {display: none;}
+  #navbar li.dropdown {
+    float: right;
+    display: inline-block;
+  }
+}
+
+/* If the display is less than 1200 pixels wide which is the width until the navigation buttons 
+do not all fit on one line, an icon will display to change to a vertical navigation bar */
+@media screen and (max-width: 1200px) {
+  #navbar.responsive {position: relative;}
+  #navbar.responsive li.dropdown {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  #navbar.responsive li {
+    float: none;
+    display: inline;
+  }
+  #navbar.responsive li a {
+    display: block;
+    text-align: left;
+  }
+}
+/* =============== INDEX PAGE =============== */
+/* ========================================= */
+
+/* ====== Animated Slideshow on Index Page ====== */
+.slidesCornwall {display:none}
+.slideshow {
+  width: 100%;
+  position: relative;
+  margin: auto;
+}
+/* The dots below the slideshow to indicate how many images there are */
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  background-color: #bbbbbb;
+  border-radius: 100%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.active {background-color: #717171;}
+
+/* Fading animation for the slideshow on the homepage */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 5s;
+  animation-name: fade;
+  animation-duration: 5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/* ============ INFORMATION PAGE ============ */
+/* ========================================== */
+#apartment {
+	display: block;
+	margin: auto;
+}
+/* ====== Photo Gallery Thumbnails ====== */
+div.gallery{
+	border: 1px solid black; 
+	float:left;
+}
+div.gallery:hover{
+	opacity: 0.5; 
+	cursor: pointer;
+}
+/* ====== The Modal box which pops up when an image from the gallery is clicked 
+	and shows an enlarged picture ====== */
+.modal {
+	display:none; 
+	position: fixed; 
+	z-index: 1; 
+	padding-top: 10px;
+	left: 25%;
+	right: 25%;
+	top: 5%;
+	width: 32%; 
+	height: auto;
+	overflow:auto; 
+	background-color: #505050;
+}
+.modalContent {
+	margin: auto; 
+	display: block; 
+	top: 0;
+	width: 100%;
+	height: auto;
+	max-width: 600px;
+}
+
+/* The caption that shows up below the enlarged picture */
+#desc {
+	margin: auto;
+	display: block;
+	width: 80%;
+	max-width: 700px;
+	color: #cccccc;
+	padding: 10px;
+	margin-bottom: 10px;
+	height: 10px;
+	text-align: center;
+}
+
+/* The 'x' which closes the modal box */
+.close {
+	position:absolute; 
+	color: white;
+	top: 15px; 
+	right: 35px; 
+	font-size: 28px; 
+	font-weight: bold;
+}
+.close:hover {
+	color: grey; 
+	text-decoration: none; 
+	cursor: pointer;
+}
+/* ============ THINGS TO DO PAGE ============ */
+/* =========================================== */
+
+/* ====== The Accordion buttons on the Things To Do page which hide large amounts of 
+	text on the page until you click on them ====== */
+button.accordion {
+    background-color: #FCF4D9;
+    font-size: 16px; 
+    font-family: Chalkduster, Stencil, Times, serif;
+    color: black;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border: 1px dashed grey;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Adds colour to the accordion headings when you hover or click on them */
+button.accordion.active, button.accordion:hover {background-color: #f7dc80;}
+
+/* The information which is hidden by default */
+div.panel {
+    padding: 0 18px;
+    background-color: #FCF4D9;
+    display: none;
+}
+
+/* This will show the panel content */
+div.panel.show {display: block;}
+button.accordion:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777777;
+    float: right;
+    margin-left: 5px;
+}
+button.accordion.active:after {content: "\2796";} /* Unicode character for "minus" sign (-) */
+
+/* Makes all the images on the Things to Do page the same size for consistancy */
+.attImgs {
+	width: 30%;
+	height: 10%;
+}
+/* A link with a fixed position to easily navigate back to the top of the page */
+.top {
+	position: fixed;
+	bottom: 50px;
+	right: 100px;
+}
+
+/* ============ DIRECTIONS PAGE ============ */
+/* ========================================= */
+#map {
+	display: block;
+	margin: auto;
+	border: none;
+	width: 600px;
+	height: 400px;
+}
+
+/* ============ REVIEWS PAGE ============ */
+/* ========================================= */
+
+/* Styling for the text input boxes on the review page */
+#namebox {
+	width:25%;
+	padding: 5px 20px;
+	box-sizing: border-box;
+    font-size: small;
+}
+#inputComment {
+    width: 50%;
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    font-size: small;
+}
+.comment {
+	padding-left:3em;
+	width:500px;
+    word-wrap: break-word;
+}
+
+/* The buttons on the review page */
+.button{
+	background-color: #505050;
+	border: none;
+	color: white;
+	padding: 10px 32px;
+	text-align: center;
+	display: inline-block;
+	font-size: 12px;
+	cursor: pointer;
+	border-radius: 10px;
+	outline: none;
+}
+.button:hover {background-color: #848383;}
+
+/* ============ BOOKING PAGE ============ */
+/* ====================================== */
+.ui-datepicker{
+	font-size: 70%;
+}
+.ui-state-active{
+	background: #01B6AD;
+}
+.value{
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	margin-bottom:2vh;
+}
+.bookTable, .bookTable tr, .bookTable th, .bookTable td{
+	border: 1px solid black;
+	background-color: white;
+}
+.bookTable th{
+	background-color: #B2577A;
+	color: white;
+}
+.space{
+	margin-top: 2vh;
+	margin-bottom:2vh;
+}

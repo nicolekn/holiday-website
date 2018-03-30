@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title> SeaView Apartment </title>
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link type="text/css" rel="stylesheet" href="static/index.css">
+	</head>
+
+	<body data-title="Book">
+	<div id="wrap">
+		<header>
+			<div id="logo">
+				<img src="static/images/SeaView_logo.png" alt="SeaView logo">
+			</div>
+			<h1> SeaView Apartment </h1>
+		</header>
+
+		<ul id="navbar" class="navbar">
+			<li> <a href = "/"> Home </a></li>
+			<li> <a href = "/information"> Information </a></li>
+			<li> <a href = "/things_to_do"> Things to do </a></li>
+			<li> <a href = "/directions"> Directions </a></li>
+			<li> <a href = "/reviews"> Reviews </a></li>
+			<li> <a href = "/contactus"> Contact Us </a></li>
+			<li id="book"> <a href = "/booking"> BOOK HERE </a></li>
+			<li class="dropdown"> <a href="javascript:void(0);" onclick="resize()">&#9776;</a></li> 
+		</ul>
+		<div id="main">
+			<div class="border">
+			<h2> Booking for SeaView Apartment </h2>
+				<p>Booking for this apartment is really simple. Just enter your name, email and the dates you want to stay for into the correct fields. <br>
+				We hope that you will enjoy your stay here!</p>
+			
+			<!--Booking input fields which sends the data to the python file when submitted -->
+			<form action = "addBookEntry" method = "post" >
+				Name: <br>
+				<input id="bookName" type = "text" name = "name" /><br>
+				Email address: <br>
+				<input id="bookEmail" type = "text" name = "email" /><br>
+				Check in:
+				<input id="checkin" class="space" type = "text" name="checkIn" placeholder="dd-mm-yyyy"/>
+				Check out: 
+				<input id="checkout" type = "text" name="checkOut" placeholder="dd-mm-yyyy"/>
+				Number of people:
+				<select name="people">
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+				</select><br>
+				Days:
+				<input id="bookDays" class="value" type = "text" name = "days" size="2" readonly="readonly" />
+				Price: £
+				<input id="bookPrice" class="value" type = "text" name = "price" size="7" readonly="readonly" /><br>
+				<input class="button" type = "submit" value = "submit" onclick="submitBook()" >
+			</form>
+			
+			<!--Put customers' booking dates in a table which the owner can check and change the confirmed column-->
+			<h2>Previous Bookings</h2>
+				<table class="bookTable">
+					<tr>
+						<th> Check in </th>
+						<th> Check out </th>
+						<th> Confirmed </th>
+					</tr>
+					{% for item in bookingTable %}
+						<tr>
+								<td>	{{item[2]}} </td>
+								<td>	{{item[3]}} </td>
+								<td>	{{item[5]}} </td>
+						</tr>
+					{%endfor%}
+				</table>
+			</div>
+		</div>
+	</div>
+		<footer>
+		<hr>
+			<p> This page was last edited on the 13th December 2016. </p>
+		</footer>
+	<script src="static/index.js"></script> 
+	</body>
+</html>
